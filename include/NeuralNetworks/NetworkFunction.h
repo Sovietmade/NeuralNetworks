@@ -12,16 +12,16 @@
 
 class NetworkFunction {
 public:
-						NetworkFunction(){};
-	virtual 			~NetworkFunction(){};
+				NetworkFunction(){};
+	virtual 		~NetworkFunction(){};
 	virtual double 		Process( double inParam ) = 0;
 	virtual double 		Derivative( double inParam ) = 0;
 };
 
 class Linear : public NetworkFunction {
 public:
-	Linear(){};
-	virtual 			~Linear(){};
+				Linear(){};
+	virtual 		~Linear(){};
 	virtual double 		Process( double inParam ){ return inParam; };
 	virtual double 		Derivative( double inParam ){ return 0; };
 };
@@ -29,16 +29,16 @@ public:
 
 class Sigmoid : public NetworkFunction {
 public:
-						Sigmoid(){};
-	virtual 			~Sigmoid(){};
+				Sigmoid(){};
+	virtual 		~Sigmoid(){};
 	virtual double 		Process( double inParam ){ return ( 1 / ( 1 + exp( -inParam ) ) ); };
 	virtual double 		Derivative( double inParam ){ return ( this->Process(inParam)*(1 - this->Process(inParam)) );};
 };
 
 class BipolarSigmoid : public NetworkFunction {
 public:
-						BipolarSigmoid(){};
-	virtual 			~BipolarSigmoid(){};
+				BipolarSigmoid(){};
+	virtual 		~BipolarSigmoid(){};
 	virtual double 		Process( double inParam ){ return ( 2 / ( 1 + exp( -inParam ) ) - 1 ) ;};
 	virtual double 		Derivative( double inParam ){ return ( 0.5 * ( 1 + this->Process( inParam ) ) * ( 1 - this->Process( inParam ) ) ); };
 };
