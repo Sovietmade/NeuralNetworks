@@ -34,14 +34,14 @@ public:
   double	GetErrorInFormationTerm( ){ return mErrorInformationTerm; };
   void	SetErrorInFormationTerm( double inEITerm ){ mErrorInformationTerm = inEITerm; };
   
-  void		    	SetLastTranslatedSignal( double inLastTranslatedSignal ){ mLastTranslatedSignal = inLastTranslatedSignal; };
-  double		  	GetLastTranslatedSignal( ){ return mLastTranslatedSignal; };
+  void	SetLastTranslatedSignal( double inLastTranslatedSignal ){ mLastTranslatedSignal = inLastTranslatedSignal; };
+  double	GetLastTranslatedSignal( ){ return mLastTranslatedSignal; };
 protected:
-  double 			  mWeightToNeuron;
+  double        mWeightToNeuron;
   Neuron<T> * 	mNeuronLinkedTo;
-  double			  mWeightCorrectionTerm;
-  double		  	mErrorInformationTerm;
-  double		  	mLastTranslatedSignal;
+  double	mWeightCorrectionTerm;
+  double	mErrorInformationTerm;
+  double	mLastTranslatedSignal;
 };
 
 
