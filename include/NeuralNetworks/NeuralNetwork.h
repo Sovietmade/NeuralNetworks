@@ -63,14 +63,14 @@ public:
 	 * 		- Prerequisites:	The template parameter has to be picked based on your input data.
 	 *
 	 */
-												NeuralNetwork( const int& inInputs,
-															   const int& inOutputs,
-															   const int& inNumOfHiddenLayers = 0,
-															   const int& inNumOfNeuronsInHiddenLayers = 0,
-															   const char * inTypeOfNeuralNetwork = "MultiLayerPerceptron"
-												);
+					NeuralNetwork( const int& inInputs,
+						const int& inOutputs,
+						const int& inNumOfHiddenLayers = 0,
+						const int& inNumOfNeuronsInHiddenLayers = 0,
+						const char * inTypeOfNeuralNetwork = "MultiLayerPerceptron"
+					);
 
-												~NeuralNetwork( );
+					~NeuralNetwork( );
 
 	 /**
 	 * 		Public method Train.
@@ -83,8 +83,8 @@ public:
 	 *					  		- the data and targets has to be in the appropriate order u want the network to learn.
 	 */
 
-	bool										Train( const std::vector<std::vector<T > >& inData,
-													   const std::vector<std::vector<T > >& inTarget );
+	bool				Train( const std::vector<std::vector<T > >& inData,
+						const std::vector<std::vector<T > >& inTarget );
 
 	 /**
 	 * 		Public method GetNetResponse.
@@ -94,7 +94,7 @@ public:
 	 *			@param inData 	- a vector data to feed with.
 	 */
 
-	std::vector<int>							GetNetResponse( const std::vector<T>& inData );
+	std::vector<int>		GetNetResponse( const std::vector<T>& inData );
 
 	 /**
 	 * 		Public method SetAlgorithm.
@@ -104,7 +104,7 @@ public:
 	 *			@param inTrainingAlgorithm 	- an existence of already created object  of type TrainAlgorithm.
 	 */
 
-	void										SetAlgorithm( TrainAlgorithm<T> * inTrainingAlgorithm )		{ mTrainingAlgoritm = inTrainingAlgorithm; };
+	void				SetAlgorithm( TrainAlgorithm<T> * inTrainingAlgorithm )		{ mTrainingAlgoritm = inTrainingAlgorithm; };
 
 	 /**
 	 * 		Public method SetNeuronFactory.
@@ -114,7 +114,7 @@ public:
 	 *			@param inNeuronFactory 	- an existence of already created object  of type NeuronFactory.
 	 */
 
-	void										SetNeuronFactory( NeuronFactory<T> * inNeuronFactory )		{ mNeuronFactory = inNeuronFactory; };
+	void				SetNeuronFactory( NeuronFactory<T> * inNeuronFactory )		{ mNeuronFactory = inNeuronFactory; };
 
 	 /**
 	 * 		Public method ShowNetworkState.
@@ -123,7 +123,7 @@ public:
 	 *		- Prerequisites:	None.
 	 */
 
-	void										ShowNetworkState( );
+	void				ShowNetworkState( );
 
 	 /**
 	 * 		Public method GetMinMSE.
@@ -132,7 +132,7 @@ public:
 	 *		- Prerequisites:	None.
 	 */
 
-	const double&								GetMinMSE( ){ return mMinMSE; };
+	const double&			GetMinMSE( )							{ return mMinMSE; };
 
 	 /**
 	 * 		Public method SetMinMSE.
@@ -142,19 +142,19 @@ public:
 	 *			@param inMinMse 	- double value, the biggest MSE required to achieve during the training phase.
 	 */
 
-	void										SetMinMSE( const double& inMinMse ){ mMinMSE = inMinMse; };
+	void				SetMinMSE( const double& inMinMse )				{ mMinMSE = inMinMse; };
 
 	/**
 	* 		Friend class.
 	*/
 
-	friend class 								Hebb<T>;
+	friend class 			Hebb<T>;
 
 	/**
 	* 		Friend class.
 	*/
 
-	friend class 								Backpropagation<T>;
+	friend class 			Backpropagation<T>;
 
 protected:
 
@@ -166,7 +166,7 @@ protected:
 	 *			@param inInd 	-  an integer index of layer.
 	 */
 
-	std::vector<Neuron<T > *>&					GetLayer( const int& inInd ) 								{ return mLayers[inInd]; };
+	std::vector<Neuron<T > *>&	GetLayer( const int& inInd ) 					{ return mLayers[inInd]; };
 
 	/**
 	 * 		Protected method size.
@@ -175,7 +175,7 @@ protected:
 	 *		- Prerequisites:	None.
 	 */
 
-	unsigned int								size( ) 													{ return mLayers.size( ); };
+	unsigned int			size( ) 							{ return mLayers.size( ); };
 
 	/**
 	 * 		Protected method GetNumOfOutputs.
@@ -184,7 +184,7 @@ protected:
 	 *		- Prerequisites:	None.
 	 */
 
-	std::vector<Neuron<T > *>&					GetOutputLayer( ) 											{ return mLayers[mLayers.size( )-1]; };
+	std::vector<Neuron<T > *>&	GetOutputLayer( ) 						{ return mLayers[mLayers.size( )-1]; };
 
 	/**
 	 * 		Protected method GetInputLayer.
@@ -193,7 +193,7 @@ protected:
 	 *		- Prerequisites:	None.
 	 */
 
-	std::vector<Neuron<T > *>&					GetInputLayer( ) 											{ return mLayers[0]; };
+	std::vector<Neuron<T > *>&	GetInputLayer( ) 						{ return mLayers[0]; };
 
 	/**
 	 * 		Protected method GetBiasLayer.
@@ -202,7 +202,7 @@ protected:
 	 *		- Prerequisites:	None.
 	 */
 
-	std::vector<Neuron<T > *>& 					GetBiasLayer( )												{ return mBiasLayer; };
+	std::vector<Neuron<T > *>& 	GetBiasLayer( )							{ return mBiasLayer; };
 
 	/**
 	 * 		Protected method UpdateWeights.
@@ -211,7 +211,7 @@ protected:
 	 *		- Prerequisites:	None, but only makes sense, when its called during the training phase.
 	 */
 
-	void										UpdateWeights( );
+	void				UpdateWeights( );
 
 	/**
 	 * 		Protected method ResetCharges.
@@ -220,7 +220,7 @@ protected:
 	 *		- Prerequisites:	None, but only makes sense, when its called during the training phase.
 	 */
 
-	void										ResetCharges( );
+	void				ResetCharges( );
 
 	/**
 	 * 		Protected method AddMSE.
@@ -230,7 +230,7 @@ protected:
 	 *			@param inInd 	-  a double amount of MSE to be add.
 	 */
 
-	void										AddMSE( double inPortion )									{ mMeanSquaredError += inPortion; };
+	void				AddMSE( double inPortion )					{ mMeanSquaredError += inPortion; };
 
 	/**
 	 * 		Protected method GetMSE.
@@ -239,7 +239,7 @@ protected:
 	 *		- Prerequisites:	None.
 	 */
 
-	double										GetMSE( )													{ return mMeanSquaredError; };
+	double				GetMSE( )							{ return mMeanSquaredError; };
 
 	/**
 	 * 		Protected method ResetMSE.
@@ -248,16 +248,16 @@ protected:
 	 *		- Prerequisites:	None.
 	 */
 
-	void										ResetMSE( )													{ mMeanSquaredError = 0; };
+	void				ResetMSE( )							{ mMeanSquaredError = 0; };
 
 
-	NeuronFactory<T> *							mNeuronFactory;												/*!< Member, which is responsible for creating neurons @see SetNeuronFactory */
-	TrainAlgorithm<T> *							mTrainingAlgoritm;											/*!< Member, which is responsible for the way the network will trained @see SetAlgorithm */
-	std::vector<std::vector<Neuron<T > *> > 	mLayers;													/*!< Inner representation of neural networks */
-	std::vector<Neuron<T > *> 					mBiasLayer;													/*!< Container for biases */
-	unsigned int								mInputs, mOutputs, mHidden;									/*!< Number of inputs, outputs and hidden units */
-	double										mMeanSquaredError;											/*!< Mean Squared Error which is changing every iteration of the training*/
-	double										mMinMSE;													/*!< The biggest Mean Squared Error required for training to stop*/
+	NeuronFactory<T> *		mNeuronFactory;							/*!< Member, which is responsible for creating neurons @see SetNeuronFactory */
+	TrainAlgorithm<T> *				mTrainingAlgoritm;				/*!< Member, which is responsible for the way the network will trained @see SetAlgorithm */
+	std::vector<std::vector<Neuron<T > *> > 	mLayers;					/*!< Inner representation of neural networks */
+	std::vector<Neuron<T > *> 			mBiasLayer;					/*!< Container for biases */
+	unsigned int					mInputs, mOutputs, mHidden;			/*!< Number of inputs, outputs and hidden units */
+	double						mMeanSquaredError;				/*!< Mean Squared Error which is changing every iteration of the training*/
+	double						mMinMSE;					/*!< The biggest Mean Squared Error required for training to stop*/
 };
 
 
