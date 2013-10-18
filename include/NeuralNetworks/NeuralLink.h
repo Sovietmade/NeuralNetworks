@@ -20,19 +20,19 @@ public:
                 NeuralLink( ) : mWeightToNeuron( 0.0 ),  mNeuronLinkedTo( 0 ), mWeightCorrectionTerm( 0 ), mErrorInformationTerm( 0 ), mLastTranslatedSignal( 0 ){ };
                 NeuralLink( Neuron<T> * inNeuronLinkedTo, double inWeightToNeuron = 0.0 ) :  mWeightToNeuron( inWeightToNeuron ), mNeuronLinkedTo( inNeuronLinkedTo ), mWeightCorrectionTerm( 0 ), mErrorInformationTerm( 0 ), mLastTranslatedSignal( 0 ){ };
   
-  void			    SetWeight( const double& inWeight ){ mWeightToNeuron = inWeight; };
+  void	SetWeight( const double& inWeight ){ mWeightToNeuron = inWeight; };
   const double& GetWeight( ){ return mWeightToNeuron; };
   
   void          SetNeuronLinkedTo( Neuron<T> * inNeuronLinkedTo ){ mNeuronLinkedTo = inNeuronLinkedTo; };
-  Neuron<T> *		GetNeuronLinkedTo( ){ return mNeuronLinkedTo; };
+  Neuron<T> *	GetNeuronLinkedTo( ){ return mNeuronLinkedTo; };
   
-  void			    SetWeightCorrectionTerm( double inWeightCorrectionTerm ){ mWeightCorrectionTerm = inWeightCorrectionTerm; };
-  double			  GetWeightCorrectionTerm( ){ return mWeightCorrectionTerm; };
+  void	SetWeightCorrectionTerm( double inWeightCorrectionTerm ){ mWeightCorrectionTerm = inWeightCorrectionTerm; };
+  double	GetWeightCorrectionTerm( ){ return mWeightCorrectionTerm; };
   
-  void			    UpdateWeight( ){ mWeightToNeuron = mWeightToNeuron + mWeightCorrectionTerm; };
+  void	UpdateWeight( ){ mWeightToNeuron = mWeightToNeuron + mWeightCorrectionTerm; };
   
-  double			  GetErrorInFormationTerm( ){ return mErrorInformationTerm; };
-  void			    SetErrorInFormationTerm( double inEITerm ){ mErrorInformationTerm = inEITerm; };
+  double	GetErrorInFormationTerm( ){ return mErrorInformationTerm; };
+  void	SetErrorInFormationTerm( double inEITerm ){ mErrorInformationTerm = inEITerm; };
   
   void		    	SetLastTranslatedSignal( double inLastTranslatedSignal ){ mLastTranslatedSignal = inLastTranslatedSignal; };
   double		  	GetLastTranslatedSignal( ){ return mLastTranslatedSignal; };
