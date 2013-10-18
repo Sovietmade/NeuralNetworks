@@ -17,11 +17,11 @@ template <typename T>
 class NeuralLink
 {
 public:
-					NeuralLink( ) : mWeightToNeuron( 0.0 ),  mNeuronLinkedTo( 0 ), mWeightCorrectionTerm( 0 ), mErrorInformationTerm( 0 ), mLastTranslatedSignal( 0 ){ };
-					NeuralLink( Neuron<T> * inNeuronLinkedTo, double inWeightToNeuron = 0.0 ) :  mWeightToNeuron( inWeightToNeuron ), mNeuronLinkedTo( inNeuronLinkedTo ), mWeightCorrectionTerm( 0 ), mErrorInformationTerm( 0 ), mLastTranslatedSignal( 0 ){ };
+				NeuralLink( ) : mWeightToNeuron( 0.0 ),  mNeuronLinkedTo( 0 ), mWeightCorrectionTerm( 0 ), mErrorInformationTerm( 0 ), mLastTranslatedSignal( 0 ){ };
+				NeuralLink( Neuron<T> * inNeuronLinkedTo, double inWeightToNeuron = 0.0 ) :  mWeightToNeuron( inWeightToNeuron ), mNeuronLinkedTo( inNeuronLinkedTo ), mWeightCorrectionTerm( 0 ), mErrorInformationTerm( 0 ), mLastTranslatedSignal( 0 ){ };
 
 	void			SetWeight( const double& inWeight ){ mWeightToNeuron = inWeight; };
-	const double& 	GetWeight( ){ return mWeightToNeuron; };
+	const double& 		GetWeight( ){ return mWeightToNeuron; };
 
 	void			SetNeuronLinkedTo( Neuron<T> * inNeuronLinkedTo ){ mNeuronLinkedTo = inNeuronLinkedTo; };
 	Neuron<T> *		GetNeuronLinkedTo( ){ return mNeuronLinkedTo; };
@@ -38,7 +38,7 @@ public:
 	double			GetLastTranslatedSignal( ){ return mLastTranslatedSignal; };
 protected:
 	double 			mWeightToNeuron;
-	Neuron<T> * 	mNeuronLinkedTo;
+	Neuron<T> * 		mNeuronLinkedTo;
 	double			mWeightCorrectionTerm;
 	double			mErrorInformationTerm;
 	double			mLastTranslatedSignal;
