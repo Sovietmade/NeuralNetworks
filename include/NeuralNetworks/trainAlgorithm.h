@@ -17,9 +17,9 @@ template <typename T>
 class TrainAlgorithm
 {
 public:
-		virtual 			~TrainAlgorithm(){};
-		virtual double 			Train(const std::vector<T>& inData, const std::vector<T>& inTarget) = 0;
-		virtual void			WeightsInitialization() = 0;
+	virtual 			~TrainAlgorithm(){};
+	virtual double 			Train(const std::vector<T>& inData, const std::vector<T>& inTarget) = 0;
+	virtual void			WeightsInitialization() = 0;
 protected:
 };
 
