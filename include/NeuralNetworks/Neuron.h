@@ -157,7 +157,7 @@ public:
 	virtual std::vector<NeuralLink<T > *>&	GetInputLink( )							{ return mNeuron->GetInputLink( ); };
 
 	virtual double				PerformTrainingProcess( double inTarget );
-	virtual	void				PerformWeightsUpdating( );
+	virtual void				PerformWeightsUpdating( );
 
 	virtual void				ShowNeuronState( )						{ mNeuron->ShowNeuronState( ); };
 protected:
