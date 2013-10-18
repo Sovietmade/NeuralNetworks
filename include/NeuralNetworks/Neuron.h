@@ -75,17 +75,17 @@ public:
 	virtual int							GetNumOfLinks( )						{ return mLinksToNeurons.size( ); };
 	virtual double							GetSumOfCharges( );
 	virtual void							ResetSumOfCharges( )						{ mSumOfCharges = 0.0; };
-	virtual	double							Process( )							{ return mNetFunc->Process( mSumOfCharges ); };
-	virtual	double							Process( double inArg )						{ return mNetFunc->Process( inArg ); };
-	virtual	double							Derivative( )							{ return mNetFunc->Derivative( mSumOfCharges ); };
+	virtual double							Process( )							{ return mNetFunc->Process( mSumOfCharges ); };
+	virtual double							Process( double inArg )						{ return mNetFunc->Process( inArg ); };
+	virtual double							Derivative( )							{ return mNetFunc->Derivative( mSumOfCharges ); };
 
 	virtual void							SetInputLink( NeuralLink<T> * inLink )				{ mInputLinks.push_back( inLink ); };
 	virtual std::vector<NeuralLink<T > *>&				GetInputLink( )							{ return mInputLinks; };
 
 
 
-	virtual	double							PerformTrainingProcess( double inTarget );
-	virtual	void							PerformWeightsUpdating( );
+	virtual double							PerformTrainingProcess( double inTarget );
+	virtual void							PerformWeightsUpdating( );
 
 	virtual void							ShowNeuronState( );
 protected:
