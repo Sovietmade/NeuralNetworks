@@ -65,29 +65,29 @@ public:
 
 	virtual					~Neuron( );
 
-	virtual	std::vector<NeuralLink<T > *>&	GetLinksToNeurons( )					{ return mLinksToNeurons; };
-	virtual	NeuralLink<T> *			at( const int& inIndexOfNeuralLink )			{ return mLinksToNeurons[ inIndexOfNeuralLink ]; };
+	virtual std::vector<NeuralLink<T > *>&	GetLinksToNeurons( )					{ return mLinksToNeurons; };
+	virtual NeuralLink<T> *			at( const int& inIndexOfNeuralLink )			{ return mLinksToNeurons[ inIndexOfNeuralLink ]; };
 
-	virtual	void				SetLinkToNeuron( NeuralLink<T> * inNeuralLink )		{ mLinksToNeurons.push_back( inNeuralLink ); };
+	virtual void				SetLinkToNeuron( NeuralLink<T> * inNeuralLink )		{ mLinksToNeurons.push_back( inNeuralLink ); };
 
-	virtual	void				Input( double inInputData )				{ mSumOfCharges += inInputData; };
-	virtual	double				Fire( );
-	virtual	int				GetNumOfLinks( )					{ return mLinksToNeurons.size( ); };
-	virtual	double				GetSumOfCharges( );
-	virtual	void				ResetSumOfCharges( )					{ mSumOfCharges = 0.0; };
-	virtual	double				Process( )						{ return mNetFunc->Process( mSumOfCharges ); };
-	virtual	double				Process( double inArg )					{ return mNetFunc->Process( inArg ); };
-	virtual	double				Derivative( )						{ return mNetFunc->Derivative( mSumOfCharges ); };
+	virtual void				Input( double inInputData )				{ mSumOfCharges += inInputData; };
+	virtual double				Fire( );
+	virtual int				GetNumOfLinks( )					{ return mLinksToNeurons.size( ); };
+	virtual double				GetSumOfCharges( );
+	virtual void				ResetSumOfCharges( )					{ mSumOfCharges = 0.0; };
+	virtual double				Process( )						{ return mNetFunc->Process( mSumOfCharges ); };
+	virtual double				Process( double inArg )					{ return mNetFunc->Process( inArg ); };
+	virtual double				Derivative( )						{ return mNetFunc->Derivative( mSumOfCharges ); };
 
-	virtual	void				SetInputLink( NeuralLink<T> * inLink )			{ mInputLinks.push_back( inLink ); };
-	virtual	std::vector<NeuralLink<T > *>&	GetInputLink( )						{ return mInputLinks; };
+	virtual void				SetInputLink( NeuralLink<T> * inLink )			{ mInputLinks.push_back( inLink ); };
+	virtual std::vector<NeuralLink<T > *>&	GetInputLink( )						{ return mInputLinks; };
 
 
 
-	virtual	double							PerformTrainingProcess( double inTarget );
-	virtual	void							PerformWeightsUpdating( );
+	virtual double							PerformTrainingProcess( double inTarget );
+	virtual void							PerformWeightsUpdating( );
 
-	virtual	void							ShowNeuronState( );
+	virtual void							ShowNeuronState( );
 protected:
 	NetworkFunction *						mNetFunc;
 	std::vector<NeuralLink<T > *>					mInputLinks;
