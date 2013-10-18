@@ -14,8 +14,8 @@ template <typename T>
 class NeuronFactory
 {
 public:
-					NeuronFactory(){};
-	virtual				~NeuronFactory(){};
+						NeuronFactory(){};
+	virtual			~NeuronFactory(){};
 	virtual Neuron<T> *		CreateInputNeuron( std::vector<Neuron<T > *>& inNeuronsLinkTo, NetworkFunction * inNetFunc ) = 0;
 	virtual Neuron<T> *		CreateOutputNeuron( NetworkFunction * inNetFunc ) = 0;
 	virtual Neuron<T> *		CreateHiddenNeuron( std::vector<Neuron<T > *>& inNeuronsLinkTo, NetworkFunction * inNetFunc ) = 0;
