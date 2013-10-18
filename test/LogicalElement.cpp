@@ -52,26 +52,26 @@ int main()
   std::vector<std::vector<double> > trainingSample;
   std::vector<double> ts1;
   ts1.push_back(1);
-  ts1.push_back(-1);
+
   std::vector<double> ts2;
   ts2.push_back(-1);
-  ts2.push_back(-1);
+
   std::vector<double> ts3;
   ts3.push_back(-1);
-  ts3.push_back(-1);
+
   std::vector<double> ts4;
   ts4.push_back(-1);
-  ts4.push_back(-1);
+
   std::vector<double> ts5;
-  ts5.push_back(0);
-  ts5.push_back(1);
+  ts5.push_back(-1);
+
   trainingSample.push_back(ts1);
   trainingSample.push_back(ts2);
   trainingSample.push_back(ts3);
   trainingSample.push_back(ts4);
   //trainingSample.push_back(ts5);
   
-  NeuralNetwork<double> * NN = new NeuralNetwork<double>(2,2,1,4);
+  NeuralNetwork<double> * NN = new NeuralNetwork<double>(2,1,1,4);
   NN->SetMinMSE(0.01);
   NN->Train(DataToFeedNN,trainingSample);
   
