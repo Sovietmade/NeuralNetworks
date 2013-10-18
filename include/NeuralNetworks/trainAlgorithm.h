@@ -17,7 +17,7 @@ template <typename T>
 class TrainAlgorithm
 {
 public:
-		virtual 				~TrainAlgorithm(){};
+		virtual 			~TrainAlgorithm(){};
 		virtual double 			Train(const std::vector<T>& inData, const std::vector<T>& inTarget) = 0;
 		virtual void			WeightsInitialization() = 0;
 protected:
@@ -27,8 +27,8 @@ template <typename T>
 class Hebb : public TrainAlgorithm<T>
 {
 public:
-							Hebb(NeuralNetwork<T> * inNeuralNetwork) : mNeuralNetwork(inNeuralNetwork){};
-	virtual					~Hebb(){};
+					Hebb(NeuralNetwork<T> * inNeuralNetwork) : mNeuralNetwork(inNeuralNetwork){};
+	virtual				~Hebb(){};
 	virtual double 			Train(const std::vector<T>& inData, const std::vector<T>& inTarget);
 	virtual void			WeightsInitialization();
 protected:
@@ -39,13 +39,13 @@ template <typename T>
 class Backpropagation : public TrainAlgorithm<T>
 {
 public:
-							Backpropagation(NeuralNetwork<T> * inNeuralNetwork);
-	virtual					~Backpropagation(){};
+					Backpropagation(NeuralNetwork<T> * inNeuralNetwork);
+	virtual				~Backpropagation(){};
 	virtual double 			Train(const std::vector<T>& inData, const std::vector<T>& inTarget);
 	virtual void			WeightsInitialization();
 protected:
-	void					NguyenWidrowWeightsInitialization();
-	void					CommonInitialization();
+	void				NguyenWidrowWeightsInitialization();
+	void				CommonInitialization();
 	NeuralNetwork<T> * 		mNeuralNetwork;
 };
 
